@@ -17,9 +17,8 @@ class Google(webdriver.Chrome):
         options.add_argument('ignore-certificate-errors')
 
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        if self.teardown:
-            self.quit()
+    def exit(self):
+        self.quit()
 
     def land_first_page(self):
         self.get(URL)
