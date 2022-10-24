@@ -1,7 +1,9 @@
 from project_files.link import URL
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+
 import time
 
 
@@ -38,14 +40,35 @@ class Google(webdriver.Chrome):
         inputs[0].send_keys(Keys.ENTER)
         self.implicitly_wait(10)
         inputs[1].send_keys(destination, first_place)
-        # inputs[1].send_keys(destination)
         inputs[1].send_keys(Keys.ENTER)
+        
+
+    def route_foot(self):
         time.sleep(5)
+        button = self.find_element(By.XPATH,
+        "//div[@data-travel_mode='2']/button"
+        )
+        button.click()
+        time.sleep(2)
+        self.implicitly_wait(10)
+        button = self.find_element(By.XPATH,
+        "//h1[@class='VuCHmb fontHeadlineSmall']"
+        )
+        button.click()
+    
+    def route_car(self):
+        time.sleep(5)
+        button = self.find_element(By.XPATH,
+        "//div[@data-travel_mode='0']/button"
+        )
+        button.click()
+        time.sleep(2)
+        self.implicitly_wait(10)
         button = self.find_element(By.XPATH,
         "//span[@class='JxBYrc pk9Qwb']"
         )
         button.click()
-        self.implicitly_wait(10)
+
 
     def route_url(self):
         next_element = self.find_element(By.XPATH,
@@ -56,6 +79,5 @@ class Google(webdriver.Chrome):
         link = self.find_element(By.XPATH,
         "//input[@class='vrsrZe']"
         ).get_attribute('value')
-        print(link)
         return link
 
