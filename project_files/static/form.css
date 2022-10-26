@@ -1,0 +1,290 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+html{
+    font-size: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root{
+    --main-bg-color: #f25e5e;
+    --second-color : rgb(219, 78, 78);
+    --grey-color: #d2d2d2;
+    --orange-color: #eb9c4d;
+    --white-color: #ffffff;
+}
+
+/*  containter */
+
+.containter{
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--main-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* background circles styling */
+
+
+.left_red_circle, .orange_big_circle, .grey_circle{
+    position: absolute;
+    border-radius: 50%;
+}
+
+.left_red_circle{
+    height: 70%;
+    width: 50%;
+    background-color: var(--second-color);
+    bottom: -10%;
+    left: -25%;
+}
+
+.orange_big_circle{
+    height: 110%;
+    width: 70%;
+    background-color: var(--orange-color);
+    bottom: -20%;
+    right: -35%;
+}
+
+.grey_circle{
+    width: 50%;
+    height: 70%;
+    background-color: var(--grey-color);
+    bottom: 0%;
+    right: -25%;
+}
+
+
+/* sections */
+
+.sections{
+    display: flex;
+    justify-content: space-evenly;
+    z-index: 1;
+    width: 100%;
+}
+
+/* left section with string*/
+
+.left_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.left_section h1{
+    font-size: 8rem;
+    color: var(--white-color);
+    position: relative;
+}
+
+.left_section span{
+    display: block;
+    font-size: 5.5rem;
+    text-align: center;
+}
+
+/* right section with forms */
+
+.right_section{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-color);
+    padding: 6em 8em;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+input{
+    margin: 1em;
+    padding: 0.5em;
+    font-size: 1.5rem;
+}
+
+.right_section input[type=text], input[type=number]{
+    border: none;
+    border-bottom: 2px solid var(--orange-color);
+    color: var(--second-color);
+    outline: none;
+}
+
+label {
+    font-size: 1.10rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--orange-color);
+
+}
+
+.right_section input[type=checkbox] {
+    width: 1em;
+    height: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    accent-color: var(--main-bg-color);
+}
+
+.button-62 {
+    background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+    border: 0;
+    border-radius: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 2.5;
+    outline: transparent;
+    padding: 0 1rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+    box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+
+/* Media queries */
+
+@media only screen and (max-width: 800px){
+
+    .left_section h1{
+        font-size: 6rem;
+        color: var(--white-color);
+        position: relative;
+    }
+
+    .left_section span{
+        display: block;
+        font-size: 4rem;
+        text-align: center;
+    }
+
+    .right_section{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--white-color);
+        padding: 4em 6em;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+}
+
+
+@media only screen and (max-width: 665px){
+
+    .left_section h1{
+        font-size: 5rem;
+        color: var(--white-color);
+        position: relative;
+    }
+
+    .left_section span{
+        display: block;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .right_section{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--white-color);
+        padding: 3em 5em;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+}
+
+
+@media only screen and (max-width: 570px){
+
+    .left_section h1{
+        font-size: 4rem;
+        color: var(--white-color);
+        position: relative;
+    }
+
+    .left_section span{
+        display: block;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .right_section{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--white-color);
+        padding: 2em 4em;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    label {
+        font-size: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--orange-color);
+    
+    }
+
+    input{
+        margin: 1em;
+        padding: 0.5em;
+        font-size: 1rem;
+    }
+}
+
+
+
+@media only screen and (max-width: 430px){
+
+    .sections{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .right_section{
+        margin-top: 15px;
+        padding: 2em 2em;
+    }
+
+    input {
+        font-size: 0.75rem;
+    }
+
+    label{
+        font-size: 0.75rem;
+    }
+
+}
+
+
+@media only screen and (max-width: 350px){
+
+    .sections{
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .right_section{
+        margin-top: 15px;
+    }
+}

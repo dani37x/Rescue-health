@@ -1,17 +1,33 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        
+        <title>Rescue Health</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
     </head>
     <body>
-        <form method="post">
-            <input type="text" name="place" required>
-            <input type="number" maxlength="12" name="phone_number" required>
-            <input type="checkbox" name="car">
-            <input type="checkbox" name="email_checkbox">
-            <input type="email" name="email">
-            <input type="submit">
-        </form>
+        <div class="containter">
+            <div class="container_background">
+                <div class="left_red_circle"></div>
+                <div class="orange_big_circle"></div>
+                <div class="grey_circle"></div>
+            </div>
+            <div class="sections">
+                <div class="left_section">
+                    <h1> DO YOU  <span> need help? </span></h1>
+
+                </div>
+                <form method="post" class="right_section">
+                    <input type="text" placeholder="location" name="location" required>
+                    <input type="number" placeholder="phone number" name="phone_number">
+                    <label for="car"> Can you drive in car to hospital?</label>
+                    <input type="checkbox" id="car" name="car">
+                    <label for="lifeguards"> Do you want Inform lifeguards?</label>
+                    <input type="checkbox" id="lifeguards" name="lifeguards" checked>
+                    <input type="submit" value="submit" class="button-62">
+                </form>
+            </div>
+        </div>
     </body>
-
-
 </html>

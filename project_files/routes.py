@@ -1,40 +1,41 @@
 from project_files import app
-from project_files import mail
 from project_files.bot import Google
 from project_files.functions import send_SMS
 
-from flask_mail import  Message
 from flask import render_template, url_for, redirect, request
 
 
 @app.route('/', methods=['GET', 'POST'])
 def form():
     if request.method == 'POST':
-        place = request.form['place']
+        location = request.form['location']
         phone_number = request.form['phone_number']
         transport = request.form.get('car')
-        email_checkbox = request.form.get('email_checkbox')
-        print(transport, email_checkbox)
-        with Google() as bot:
-            bot.land_first_page()
-            bot.accept()
-            bot.route( first_place=place, destination='Szpital w pobliżu ')
-            if  transport == 'on':
-                bot.route_car()
-            else:
-                bot.route_foot()
-            route_url = bot.route_url()
-            bot.exit()
-        # try:
-        if email_checkbox == 'on':
-            email = request.form['email']
-            msg = Message('HOSPITAL ROUTE', sender='example@mail.com', recipients=email)
-            msg.body = f'This is your route to Hospital. GOODLUCK! {route_url}'
-            mail.send(msg)
-        # send_SMS(apikey='****API_KEY****', numbers='', author='', message=route_url)
-        return redirect(route_url)
-        # except:
-        # print('Problem with redirect')
+        lifeguards = request.form.get('lifeguards')
+        try:
+            with Google() as bot:
+                bot.land_first_page()
+                bot.accept()
+                bot.route( first_place=location, destination='Szpital w pobliżu ')
+                if  transport == 'on':
+                    bot.route_car()
+                else:
+                    bot.route_foot()
+                route_url = bot.route_url()
+                bot.exit()
+        except:
+            print('nie ma takiego miejsca xd')
+            return redirect(url_for('form'))
+        try:
+            if lifeguards == 'on':
+                # send_SMS(apikey='****API_KEY****', numbers=['112','997'], author='Rescue Health app', message=
+                # f'Patient need a help. He is coming following route{route_url}')
+                print('its works')
+            # send_SMS(apikey='****API_KEY****', numbers=phone_number, author='Rescue Health app', message=route_url)
+            return redirect(route_url)
+        except:
+            print('Problem with redirect')
+            return redirect(url_for('form'))
     return render_template('form.html')
 
 
