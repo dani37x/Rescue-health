@@ -5,7 +5,7 @@ where entered data shows the nearest Hospital and track to him. Application can 
 
 
 **How this works?**
-This is page with selenium bot on server. When user will enter data, he is going to search the nearest hospital in area on 'https://www.google.pl/maps/', where user need help. If location exists he would redirect to google map tracker after some seconds. Furthermore informs health services if user wants.
+This is page with selenium bot on server. When user will enter data, bot is going to search the nearest hospital in area on 'https://www.google.pl/maps/', where user need help. If location exists he would redirect to google map tracker after some seconds. Furthermore informs health services if user wants.
 
 
 **transport types in app to select:**
@@ -16,6 +16,7 @@ This is page with selenium bot on server. When user will enter data, he is going
 Why? I didn't want use Credentials on Google Map API.
 
 *I learn how make responsive page for smartphones and how use flexbox. These were the most important things why I did this app*
+![image](https://user-images.githubusercontent.com/97913106/198114234-38c37fa0-84ad-4a98-97e5-34004f9aa42a.png)
 
 
 **to do:**
