@@ -19,11 +19,6 @@ Why? I didn't want use Credentials on Google Map API.
 ![image](https://user-images.githubusercontent.com/97913106/198114234-38c37fa0-84ad-4a98-97e5-34004f9aa42a.png)
 
 
-**to do:**
-* Flash messages
-* phone number checker
-
-
 *GET API KEY FROM:*
 * https://www.textlocal.com/
 
